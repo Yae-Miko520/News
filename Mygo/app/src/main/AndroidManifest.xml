@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/mio1"
+        android:label="mio新闻"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:roundIcon="@drawable/mio1"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Mygo"
+        tools:ignore="ExtraText"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".HistoryListActivity"
+            android:label="历史记录"
+            android:parentActivityName=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SearchActivity"
+            android:label="搜索新闻"
+            android:theme="@style/Theme.Mygo"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan"/>
+
+        <activity
+            android:name=".SearchResultActivity"
+            android:label="搜索结果"
+            android:theme="@style/Theme.Mygo"
+            android:parentActivityName=".SearchActivity"/>
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".SearchActivity"/>
+        <activity
+            android:name=".NewsDetailsActivity"
+            android:exported="false"/>
+        <activity android:name=".FavoriteListActivity"/>
+        <activity android:name=".CategoryManageActivity" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="mio新闻"
+            android:theme="@style/Theme.Mygo.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
