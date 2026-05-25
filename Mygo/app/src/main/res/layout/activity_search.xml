@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- 添加返回按钮 -->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:title="搜索新闻"
+            app:titleTextColor="@color/white"
+            app:navigationIcon="@drawable/baseline_arrow_back_24"
+            android:background="?attr/colorPrimary"
+            android:theme="?attr/actionBarTheme"
+            android:elevation="4dp">
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <!-- 关键词输入 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="关键词"
+            android:textSize="16sp"
+            android:layout_marginTop="8dp"
+            android:paddingLeft="5dp"/>
+
+        <EditText
+            android:id="@+id/et_keywords"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="输入搜索关键词"
+            android:paddingLeft="5dp"
+            android:inputType="text"/>
+
+        <!-- 分类选择 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="分类"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"
+            android:paddingLeft="5dp"/>
+
+        <Spinner
+            android:id="@+id/spinner_category"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/categories"
+            android:prompt="@string/select_category"/>
+
+        <!-- 开始时间 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="开始时间"
+            android:textSize="16sp"
+            android:paddingLeft="5dp"
+            android:layout_marginTop="16dp"/>
+
+        <EditText
+            android:id="@+id/et_start_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="请选择开始时间"
+            android:inputType="date"
+            android:focusable="false"/>
+
+        <!-- 结束时间 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="结束时间"
+            android:textSize="16sp"
+            android:paddingLeft="5dp"
+            android:layout_marginTop="16dp"/>
+
+        <EditText
+            android:id="@+id/et_end_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="请选择结束时间"
+            android:inputType="date"
+            android:focusable="false"/>
+
+        <!-- 搜索按钮 -->
+        <Button
+            android:id="@+id/btn_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="搜索"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="@color/purple_200"/>
+    </LinearLayout>
+</ScrollView>
